@@ -222,6 +222,12 @@ public class features {
     	 driver.findElement(By.id(id)).click();
          driver.findElement(By.xpath("//div/button[.='NEW CUSTOMER']")).click();
      }
-
+     public static void WebUpdate(WebDriver driver,String pack) throws InterruptedException {
+    	 
+    	 driver.findElement(By.xpath("//span[.='Manage Service']")).click();
+    	 driver.findElement(By.xpath("(//a[.='Modify'])[1]")).click();
+    	 Thread.sleep(2500);
+    	 driver.findElement(By.xpath("(//img[@alt='up arrow'])[3]")).click();
+     }
 
 }

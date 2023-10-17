@@ -6,7 +6,9 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -86,4 +88,18 @@ public class Loginandchose {
     	String xpath="//ul/li[.='"+action+"']";
     	driver.findElement(By.xpath(xpath)).click();
     }
+    public static void webSignIn(String g,WebDriver driver) throws InterruptedException, IOException {
+    	Thread.sleep(2500);
+    	driver.findElement(By.xpath("//a[normalize-space()='Manage Account']")).click();
+    	driver.findElement(By.xpath("//b[.='my account']")).click();
+    	ArrayList<String> acc=Getdata.getAccounts(g);
+    	String userid=acc.get(3);
+    	String password=acc.get(4);
+    	driver.findElement(By.xpath("//input[@name='username']")).sendKeys(userid);
+    	driver.findElement(By.xpath("//input[@name='password']")).sendKeys(password);
+    	driver.findElement(By.id("signInButton")).click();
+    	
+    }
+    
+    
 }
