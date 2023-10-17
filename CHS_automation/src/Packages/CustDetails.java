@@ -103,10 +103,11 @@ public class CustDetails {
 	 Select stateChoice=new Select(us);
 	 stateChoice.selectByVisibleText(state);
 	 driver.findElement(By.id("zip")).sendKeys(zip);
-	 driver.findElement(By.id("own")).click(); 
-	 driver.findElement(By.xpath("(//button[@type='submit'])[2]")).click();
+	 //driver.findElement(By.id("own")).click(); 
+	 driver.findElement(By.xpath("//button[.='Next']")).click();
 	 driver.findElement(By.xpath("(//input[@type='checkbox'])[1]")).click();
-	 driver.findElement(By.xpath("(//button[@type='button'])[5]")).click();
+	 Thread.sleep(4000);
+	 driver.findElement(By.xpath("(//address)[1]")).click();
 	 Thread.sleep(2000);
 	 driver.findElement(By.xpath("//div/button[@type='submit']")).click();
 	 driver.findElement(By.xpath("//button[.='Yes, Proceed']")).click();
@@ -123,6 +124,11 @@ public class CustDetails {
 		if(y==true){
 			driver.findElement(By.xpath("(//input[@value='Yes'])[1]")).click();
 			driver.findElement(By.xpath("//button[.='Ok']")).click();
+			driver.findElement(By.id("address")).clear();
+			driver.findElement(By.id("unit")).clear();
+			driver.findElement(By.id("city")).clear();
+		//	driver.findElement(By.id("state")).clear();
+			driver.findElement(By.id("zip")).clear();
 			driver.findElement(By.id("address")).sendKeys(address);
 			driver.findElement(By.id("unit")).sendKeys(unit);
 			driver.findElement(By.id("city")).sendKeys(city);
