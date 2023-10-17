@@ -27,6 +27,7 @@ public class Test extends Loginandchose {
 		 Efeatures.Websfprotect(driver, false);
 		 CustDetails.webCustinfo("A4", driver);
 		 Submitorder.webSubmit(driver,"A4");
+		 logoutClose(driver);
 	}
 
 }

@@ -5,7 +5,6 @@
     <classes>
       <class name="Scripts.Createcustcrm">
         <methods>
-          <include name="Mdu"/>
           <include name="gigTv"/>
         </methods>
       </class> <!-- Scripts.Createcustcrm -->

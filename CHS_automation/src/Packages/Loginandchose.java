@@ -29,6 +29,10 @@ public class Loginandchose {
 		driver.findElement(By.className("btn-primary")).click();
 		return driver;	
 	}
+	public static void logoutClose(WebDriver driver) {
+		driver.findElement(By.xpath("//button[.=' Logout ']")).click();
+		driver.close();
+	}
 	public static WebDriver Weblogin() {
 		WebDriver driver = driver();
 		driver.get("https://test-www.cspire.com/web/main?adobe_mc_sdid=SDID%3D705886AED5C1E4BF-292361B6D61A22E8%7CMCORGID%3D85279F01585CF4FA0A495CC3%40AdobeOrg%7CTS%3D1692892705");

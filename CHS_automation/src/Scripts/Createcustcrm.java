@@ -23,12 +23,13 @@ public class Createcustcrm extends Loginandchose{
 	        createCustomer(false,false,"A5",driver);
 	        features.GigFiberTv(0,"standerd", driver);
 	        Efeatures.smartWifi(8, true, driver);
-	        CustDetails.custInfo("",driver);
+	        CustDetails.custInfo("A3",driver);
 	        Submitorder.submit(driver);
 			 Thread.sleep(23000);
 			 String pack=driver.findElement(By.xpath("(//tr/td)[2]")).getText();
 			 Assert.assertEquals(pack,"INTERNET_TV2_PLAN");
 			 System.out.println(driver.findElement(By.xpath("//span[@class='col-sm-9']")).getText());
+			 logoutClose(driver);
 	}
     @Test
     public static void Mdu() throws IOException, InterruptedException {
@@ -39,11 +40,11 @@ public class Createcustcrm extends Loginandchose{
         CustDetails.custInfo("A7",driver);
         Submitorder.submit(driver);
 		 Thread.sleep(23000);
-		// String pack=driver.findElement(By.xpath("(//tr/td)[2]")).getText();
-		 //Assert.assertEquals(pack,"INTERNET_TV2_PLAN");
 		 System.out.println(driver.findElement(By.xpath("(//div)[20]")).getText());
 
 		 System.out.println(driver.findElement(By.xpath("//span[@class='col-sm-9']")).getText());
+		 logoutClose(driver);
+
     }
 
 	

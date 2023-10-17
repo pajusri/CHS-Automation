@@ -81,6 +81,7 @@ public class Efeatures {
       	 
     }
     public static void WebsWifi(WebDriver driver,boolean a,boolean b,String no) throws InterruptedException {
+    	//This method use to add wifi in web
     	Thread.sleep(2000);
     	if(a==false) {
     	driver.findElement(By.xpath("(//div/span[@class='useOwnRouterButton'])[2]")).click();
