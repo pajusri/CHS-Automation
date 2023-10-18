@@ -1,10 +1,17 @@
 package Packages;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class features {
-	 public static void Fiber300(WebDriver driver){}
+	 public static void Fiber300(WebDriver driver){
+		 
+	 }
 	 public static void Fiber300Tv(int number,String pack,WebDriver driver){}
 	 public static void Fiber300phone(WebDriver driver) {}
 	 public static void Fiber300TVPhone(int number,String pack,WebDriver driver){
@@ -220,12 +227,17 @@ public class features {
     	 driver.findElement(By.id(id)).click();
          driver.findElement(By.xpath("//div/button[.='NEW CUSTOMER']")).click();
      }
-     public static void WebUpdate(WebDriver driver,String pack) throws InterruptedException {
-    	 
+     public static void WebUpdate(WebDriver driver,String speed,String pack) throws InterruptedException {
+    	 //speed = speed of internet
     	 driver.findElement(By.xpath("//span[.='Manage Service']")).click();
     	 driver.findElement(By.xpath("(//a[.='Modify'])[1]")).click();
-    	 Thread.sleep(2500);
-    	 driver.findElement(By.xpath("//div[@data-ng-if='FiberPackages1000.length > 0']")).click();
+    	 driver.findElement(By.xpath("//p[.='Refer a Friend, Get $50 Off!']")).click();
+    	 driver.findElement(By.xpath("//a[@role='button']//*[name()='svg']")).click();
+    	 Thread.sleep(12000);
+    	 String xpath="//div[@data-ng-if='FiberPackages"+speed+".length > 0']";
+    	 driver.findElement(By.xpath(xpath)).click();
+    	
+
      }
 
 }

@@ -20,6 +20,7 @@ public class Submitorder {
     	driver.findElement(By.id("selectedTime")).click();
     	driver.findElement(By.xpath("//div[.=' Submit ']")).click();
 	}
+	
 public static void webSubmit(WebDriver driver,String g) throws InterruptedException, IOException {
 	 ArrayList<String> how= Getdata.getData(g);
      System.out.println(how);

@@ -13,7 +13,7 @@ public class WebUpdate extends Loginandchose {
 		// TODO Auto-generated method stub
 		 WebDriver driver = Weblogin();
 		 webSignIn("A5",driver);
-		 features.WebUpdate(driver, null);
+		 features.WebUpdate(driver,"1000", null);
 	}
 
 }
