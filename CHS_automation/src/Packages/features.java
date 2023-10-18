@@ -6,10 +6,8 @@ import org.openqa.selenium.WebDriver;
 public class features {
 	 public static void Fiber300(WebDriver driver){}
 	 public static void Fiber300Tv(int number,String pack,WebDriver driver){}
-	 public static void Fiberphone(WebDriver driver) {}
+	 public static void Fiber300phone(WebDriver driver) {}
 	 public static void Fiber300TVPhone(int number,String pack,WebDriver driver){
-		  driver.findElement(By.xpath("//label[.=' Fiber 300 + C Spire TV + Home Phone ']")).click();
-		  driver.findElement(By.xpath("//div/button[@type='submit']")).click(); 
 	 }
 	 public static void GigFiber(WebDriver driver){
 		  driver.findElement(By.xpath("//label[.=' Fiber 1 Gig ']")).click();
@@ -211,8 +209,8 @@ public class features {
      }
      public static void WebInt(WebDriver driver,String speed) {
     	 //speed 300,500,1_Gig,2_Gig,5_Gig,8_Gig
-    	 String xpath="add-to-cart-button-Fiber_"+speed;
-         driver.findElement(By.id(xpath)).click();
+    	 String id="add-to-cart-button-Fiber_"+speed;
+         driver.findElement(By.id(id)).click();
          driver.findElement(By.xpath("//div/button[.='NEW CUSTOMER']")).click();
     	      
      }
@@ -227,7 +225,7 @@ public class features {
     	 driver.findElement(By.xpath("//span[.='Manage Service']")).click();
     	 driver.findElement(By.xpath("(//a[.='Modify'])[1]")).click();
     	 Thread.sleep(2500);
-    	 driver.findElement(By.xpath("(//img[@alt='up arrow'])[3]")).click();
+    	 driver.findElement(By.xpath("//div[@data-ng-if='FiberPackages1000.length > 0']")).click();
      }
 
 }

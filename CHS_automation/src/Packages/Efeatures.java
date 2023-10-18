@@ -41,6 +41,7 @@ public class Efeatures {
     		driver.findElement(By.xpath("//input[@name='discussedProtectionCustomer']")).click();
         	driver.findElement(By.xpath("(//button[@type='submit'])[2]")).click();
     	}
+    	else {
     	driver.findElement(By.xpath("//div/input[@value='Smart WiFi 6']")).click();
     	driver.findElement(By.xpath("//input[@name='discussedProtectionCustomer']")).click();
     	driver.findElement(By.xpath("(//button[@type='submit'])[2]")).click();
@@ -58,6 +59,7 @@ public class Efeatures {
     	else if(num>=6) {
     		driver.findElement(By.xpath("(//span/input[@class='radio-btn'])[4]")).click();
     		driver.findElement(By.xpath("//div/button[.='Next']")).click();
+    	}
     	}
     }    
     public static void newPhone(WebDriver driver) {
@@ -82,6 +84,8 @@ public class Efeatures {
     }
     public static void WebsWifi(WebDriver driver,boolean a,boolean b,String no) throws InterruptedException {
     	//This method use to add wifi in web
+    	//String b it must be true while selecting packages 2000 or above and mention the number of rooms
+    	// no==1 or 2 or 3 or 4
     	Thread.sleep(2000);
     	if(a==false) {
     	driver.findElement(By.xpath("(//div/span[@class='useOwnRouterButton'])[2]")).click();
@@ -89,13 +93,13 @@ public class Efeatures {
     	}
     	else {
     		if(b==true) {
-    			String xpath="(//div[@class='bedroom-label'])["+"no"+"]";
+    			String xpath="(//div[@class='bedroom-label'])["+no+"]";
     	    	driver.findElement(By.xpath(xpath)).click();
     	    	driver.findElement(By.xpath("(//button[.='CONTINUE'])[1]")).click();
     		}
     		else {
     	driver.findElement(By.xpath("(//div/button[.='Add C Spire Smart WiFi 6 '])[1]")).click();
-    	String xpath="(//div[@class='bedroom-label'])["+"no"+"]";
+    	String xpath="(//div[@class='bedroom-label'])["+no+"]";
     	driver.findElement(By.xpath(xpath)).click();
     	driver.findElement(By.xpath("(//button[.='CONTINUE'])[1]")).click();
     		}
@@ -150,8 +154,8 @@ public class Efeatures {
     		driver.findElement(By.xpath("(//button[.=' ADD HOME PHONE '])[1]")).click();
     		if(pnew==false) {
     		driver.findElement(By.id("transfer-number-card")).click();
-    		driver.findElement(By.id("current-number")).sendKeys("");
-    		driver.findElement(By.id("transfernumber-callerid")).sendKeys("");
+    		driver.findElement(By.id("current-number")).sendKeys("    ");
+    		driver.findElement(By.id("transfernumber-callerid")).sendKeys("    ");
     		 WebElement us=driver.findElement(By.id("current-provider"));
     		 Select providerChoice=new Select(us);
     		 providerChoice.selectByVisibleText("");
@@ -163,7 +167,7 @@ public class Efeatures {
     		driver.findElement(By.id("newnumber-callerid")).click();
       		 WebElement us=driver.findElement(By.id("newnumber-city"));
     		 Select providerChoice=new Select(us);
-    		 providerChoice.selectByVisibleText("");
+    		 providerChoice.selectByVisibleText("      ");
     		 driver.findElement(By.id("newnumber-submit")).click();
     		 driver.findElement(By.id("//button[.='SUBMIT']")).click();
     		}
